@@ -4,7 +4,7 @@ import { Picture } from "astro:assets";
 const { frontmatter } = Astro.props;
 ---
 
-<BaseLayout pageTitle={frontmatter.title}>
+<BaseLayout>
   <main class="p-4">
 
     <h1 class="">{frontmatter.title}</h1>
