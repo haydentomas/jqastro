@@ -1,15 +1,27 @@
 ---
 import HeaderLink from './HeaderLink.astro';
+import { Image } from 'astro:assets';
+import mylogo from '../assets/logo.png';
 ---
 
-<header>
-	<nav>
-		<div class="internal-links">
-			<HeaderLink href="/">Home</HeaderLink>
-			<HeaderLink href="/blog">Blog</HeaderLink>
-			<HeaderLink href="/about">About</HeaderLink>
-			<HeaderLink href="/tags">Tags</HeaderLink>
-		</div>
+<div class="container">
+	<header>
+		<a href="/">
+			<Image loading="eager" src={mylogo}
+  widths={[240, 540, 720, mylogo.width]}
+  sizes={`(max-width: 360px) 100px, (max-width: 720px) 100px, (max-width: 1600px) 100px, ${mylogo.width}px`}
+  alt="Hayden Tomas - Accessible and secure website development."
+/>
+			</a>
+		<nav>
+			<div class="internal-links">
+				<HeaderLink href="/">Home</HeaderLink>
+				<HeaderLink href="/blog">Blog</HeaderLink>
+				<HeaderLink href="/about">About</HeaderLink>
+				<HeaderLink href="/tags">Tags</HeaderLink>
+			</div>
+		
+		</nav>
+	</header>
 	
-	</nav>
-</header>
+</div>
